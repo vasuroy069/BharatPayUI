@@ -1,0 +1,71 @@
+<!-- <mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Shiba Inu</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+
+  <mat-card-content>
+    <p>
+      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+      bred for hunting.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card> -->
+
+<div class="container" style="overflow-y: scroll;max-height: 500px;">
+    <div *ngFor="let request of data.request" class="card userListDiv">
+            <div class="card-body" (click)="getWorkFlowDetails(request)" >
+              <h3 class="card-title" style="display: inline-block;">{{request.workFlowId}}</h3>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+             <div style="float: right;margin-top: 13px">
+                <button class="btn btn-success"  (click)="$event.stopPropagation();approveRequest(request)">Approve</button>
+                <button class="btn btn-danger"  (click)="$event.stopPropagation();declineRequest(request)">Reject</button>
+              </div>
+              
+            </div>
+            
+    </div>
+    <!-- <div class="card userListDiv">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+    </div>
+    <div class="card userListDiv">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+    </div>
+    <div class="card userListDiv">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+    </div>
+    <div class="card userListDiv">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+    </div>
+    <div class="card userListDiv">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+    </div> -->
+
+</div>

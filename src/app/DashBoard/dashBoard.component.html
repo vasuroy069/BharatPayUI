@@ -1,0 +1,21 @@
+<div class="container">
+    <div style="font-size: 4em;">
+            <i class="fa fa-bell-o" aria-hidden="true" style="float:right;margin-right:-6%;margin-top:-5%;cursor: pointer;"><span class="badge badge-danger" style="background-color: red;" >4</span></i>
+    </div>
+    
+        <div class="row ">
+          <div class="col-sm-4 actionDiv" >
+              <i class="fa fa-user-plus" aria-hidden="true" style="font-size: 12.6em;" (click)="openModalWithComponent()"></i>  
+          </div>
+          <div class="col-sm-4 actionDiv">
+               <a routerLink="userList" ><i class="fa fa-users" aria-hidden="true" style="font-size: 12.6em;"></i></a> 
+            </div>
+          <div class="col-sm-4 actionDiv" (click)="getApprovalRequest()">
+              <span class="badge badge-light" style="padding:3%;float:right;">4</span>
+              <i class="fa fa-envelope-open" aria-hidden="true" style="font-size: 12.6em;"></i>
+          </div>
+          <!-- <div class="col-sm-4 actionDiv">
+              <i class="fa fa-thumbs-o-up" aria-hidden="true" style="font-size: 12.6em;"></i>
+          </div> -->
+        </div>
+</div>

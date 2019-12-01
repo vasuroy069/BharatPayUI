@@ -1,0 +1,400 @@
+<!-- <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">/
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Add User</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<mat-vertical-stepper [linear]="false"  #stepper>
+    <mat-step [completed]="isUserDetailsSubmitted">
+      <form [formGroup]="addUserForm">
+      <div class="form-group" style="width:300px;">
+        <ng-template matStepLabel>Fill out your name</ng-template>
+        <mat-form-field>
+          <input class="form-control" matInput placeholder="Last name, First name" formControlName="userName" >
+        </mat-form-field>
+      </div>
+      <div class="form-group"  style="width:300px;">
+        <ng-template matStepLabel>Email Id:</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="EmailId@domain.com" formControlName="emailId" >
+        </mat-form-field>
+      </div>
+      <div class="form-group"  style="width:300px;">
+        <ng-template matStepLabel>Phone Number:</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Phone Number" formControlName="phoneNumber" >
+        </mat-form-field>
+      </div>
+      <div class="form-group"  style="width:300px;">
+        <ng-template matStepLabel>Alternate Phone Number:</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Alternate Phone Number:" formControlName="altPhoneNumber" >
+        </mat-form-field>
+      </div>
+        <div class="form-group"  style="width:300px;">
+            <ng-template matStepLabel>Occupation:</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="Occupation:" formControlName="occupation" >
+            </mat-form-field>
+        </div>
+        <div class="form-group"  style="width:300px;">
+            <ng-template matStepLabel>Father Name:</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="Father Name:" formControlName="fatherName" >
+            </mat-form-field>
+        </div>
+        
+        <div class="form-group">
+            <ng-template matStepLabel>Address:</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="Please enter the Address:" formControlName="addressDetails" >
+            </mat-form-field>
+            </div>
+            <div class="form-group">
+                <ng-template matStepLabel>District:</ng-template>
+                <mat-form-field>
+                  <input matInput placeholder="Please enter the District:" formControlName="district" >
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                    <ng-template matStepLabel>City:</ng-template>
+                    <mat-form-field>
+                      <input matInput placeholder="Please enter the City:" formControlName="city" >
+                    </mat-form-field>
+            </div>
+            <div class="form-group">
+                <ng-template matStepLabel>State:</ng-template>
+                <mat-form-field>
+                  <input matInput placeholder="Please enter the State:" formControlName="state" >
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <ng-template matStepLabel>Zip Code:</ng-template>
+                <mat-form-field>
+                  <input matInput placeholder="Please enter the Zip Code:" formControlName="pincode" >
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <ng-template matStepLabel>Country:</ng-template>
+                <mat-form-field>
+                  <input matInput placeholder="Your Country please:" formControlName="country" >
+                </mat-form-field>
+            </div>
+
+        <!-- <div formGroupName="addressDetails" class="well well-lg">
+            <div class="form-group">
+            <ng-template matStepLabel>Address:</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="Please enter the Address:" formControlName="address" >
+            </mat-form-field>
+            </div>
+            <div class="form-group">
+                <ng-template matStepLabel>District:</ng-template>
+                <mat-form-field>
+                  <input matInput placeholder="Please enter the District:" formControlName="district" >
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                    <ng-template matStepLabel>City:</ng-template>
+                    <mat-form-field>
+                      <input matInput placeholder="Please enter the City:" formControlName="city" >
+                    </mat-form-field>
+            </div>
+            <div class="form-group">
+                <ng-template matStepLabel>State:</ng-template>
+                <mat-form-field>
+                  <input matInput placeholder="Please enter the State:" formControlName="state" >
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <ng-template matStepLabel>Zip Code:</ng-template>
+                <mat-form-field>
+                  <input matInput placeholder="Please enter the Zip Code:" formControlName="pincode" >
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <ng-template matStepLabel>Country:</ng-template>
+                <mat-form-field>
+                  <input matInput placeholder="Your Country please:" formControlName="country" >
+                </mat-form-field>
+            </div> 
+        </div>-->
+        
+        <div>
+          <!-- <button mat-button matStepperNext (click)="submitForm()">Next</button> -->
+          <button (click)="submitForm(stepper)" type="button">Next</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+          <i *ngIf="isFormSubmitting" class="fa fa-spinner fa-spin" style="font-size:24px;color:green"></i>
+        </div>
+      </form>
+      <!-- {{addUserForm|json}} -->
+    </mat-step>
+    <mat-step label="Service Assignment">
+      <form [formGroup]="userServiceForm">
+        <div formArrayName="services">
+          <!-- iterate the array of phone numbers -->
+          <div *ngFor="let number of userServiceForm.controls.services.controls; let i = index" >
+             <input type="checkbox" (click)="modifyServiceList(number.value)"/> <label>{{number.value.serviceName}} </label>
+              <!-- <input formControlName="{{i}}" /> -->
+          </div>
+        </div>
+        <div>
+          <button (click)="saveUserServices()" type="button">Save</button>
+        </div>
+    </form>
+    </mat-step>
+    <mat-step label="Upload Documents" [completed]="uploader.queue.length>0">
+      <!-- <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Fill out your address</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Address" formControlName="secondCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form> -->
+      <div>
+ 
+        <div class="navbar navbar-default">
+            <div class="navbar-header">
+                <a class="navbar-brand" href>Form Submission</a>
+            </div>
+        </div>
+     
+        <div class="row">
+     
+            <div class="col-md-3">
+     
+                <h3>Select files</h3>
+     
+                <div ng2FileDrop
+                     [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+                     (fileOver)="fileOverBase($event)"
+                     [uploader]="uploader"
+                     class="well my-drop-zone">
+                    Drop your files here
+                </div>
+     
+                <!-- <div ng2FileDrop
+                     [ngClass]="{'another-file-over-class': hasAnotherDropZoneOver}"
+                     (fileOver)="fileOverAnother($event)"
+                     [uploader]="uploader"
+                     class="well my-drop-zone">
+                    Another drop zone
+                </div> -->
+                <!-- <div>
+                Multiple
+                <input type="file" ng2FileSelect [uploader]="uploader" multiple  /><br/>
+     
+                Single
+                <input type="file" ng2FileSelect [uploader]="uploader" />
+                </div> -->
+            </div>
+     
+            <div class="col-md-9" style="margin-bottom: 40px">
+     
+                <h3>Upload queue</h3>
+                <p>Queue length: {{ uploader?.queue?.length }}</p>
+     
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th width="50%">Name</th>
+                        <th>Size</th>
+                        <th>Progress</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of uploader.queue">
+                        <td><strong>{{ item?.file?.name }}</strong></td>
+                        <td *ngIf="uploader.options.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
+                        <td *ngIf="uploader.options.isHTML5">
+                            <div class="progress" style="margin-bottom: 0;">
+                                <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
+                            </div>
+                        </td>
+                        <td class="text-center">
+                            <span *ngIf="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                            <span *ngIf="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                            <span *ngIf="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                        </td>
+                        <td nowrap>
+                            <button type="button" class="btn btn-success btn-xs"
+                                    (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
+                                <span class="glyphicon glyphicon-upload"></span> Upload
+                            </button>
+                            <button type="button" class="btn btn-warning btn-xs"
+                                    (click)="item.cancel()" [disabled]="!item.isUploading">
+                                <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                            </button>
+                            <button type="button" class="btn btn-danger btn-xs"
+                                    (click)="item.remove()">
+                                <span class="glyphicon glyphicon-trash"></span> Remove
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+     
+                <div>
+                    <div>
+                        Queue progress:
+                        <div class="progress" style="">
+                            <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success btn-s"
+                            (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+                        <span class="glyphicon glyphicon-upload"></span> Upload all
+                    </button>
+                    <button type="button" class="btn btn-warning btn-s"
+                            (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
+                        <span class="glyphicon glyphicon-ban-circle"></span> Cancel all
+                    </button>
+                    <button type="button" class="btn btn-danger btn-s"
+                            (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+                        <span class="glyphicon glyphicon-trash"></span> Remove all
+                    </button>
+                </div>
+                
+                <div>
+                  Multiple
+                  <input type="file" ng2FileSelect [uploader]="uploader" multiple  /><br/>
+       
+                  Single
+                  <input type="file" ng2FileSelect [uploader]="uploader" />
+                </div>
+            </div>
+     
+        </div>
+     
+        <br><br>
+     
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Response</div>
+                    <div class="panel-body">
+                      {{ response }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Declaration</ng-template>
+      I hereby declare that all the details provided and documents submitted are valid.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>
+  
+
+
+
+<!-- <div style="padding: 5%;">  
+<div class="modal-header">
+        <h4 class="modal-title pull-left">Add User</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+</div>
+<form [formGroup]="addUserForm" novalidate>
+  <div class="form-group">
+    <label class="center-block">Name:
+      <input class="form-control" formControlName="userName">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Email Id:
+      <input class="form-control" formControlName="emailId">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Phone Number:
+      <input class="form-control" formControlName="phoneNumber">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Alternate Phone Number:
+      <input class="form-control" formControlName="altPhoneNumber">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Email Id:
+      <input class="form-control" formControlName="emailId">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Occupation:
+      <input class="form-control" formControlName="occupation">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Father Name:
+      <input class="form-control" formControlName="fatherName">
+    </label>
+  </div>
+  <div formGroupName="addressDetails" class="well well-lg">
+    <h4 style="text-align: center">Address</h4>
+    <div class="form-group">
+        <label class="center-block">Address:
+          <input class="form-control" formControlName="address">
+        </label>
+      </div>
+    <div class="form-group">
+      <label class="center-block">District:
+        <input class="form-control" formControlName="district">
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="center-block">City:
+        <input class="form-control" formControlName="city">
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="center-block">State:
+        <select class="form-control" formControlName="state">
+          <option *ngFor="let state of states" [value]="state">{{state}}</option>
+        </select>
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="center-block">Zip Code:
+        <input class="form-control" formControlName="pincode">
+      </label>
+    </div>
+    <div class="form-group">
+        <label class="center-block">Country:
+          <input class="form-control" formControlName="country">
+        </label>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="reset()">Clear</button>
+    <button type="button" class="btn btn-primary" (click)="submitForm()">Submit</button>
+  </div>
+</form>
+</div> -->

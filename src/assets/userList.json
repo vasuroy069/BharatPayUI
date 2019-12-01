@@ -1,0 +1,46 @@
+[{
+    "userName": "Manish",
+    "emailId": "",
+    "phoneNumber": "",
+    "altPhoneNumber": "",
+    "occupation": "",
+    "fatherName": "",
+    "addressDetails": {
+        "address": "",
+        "district": "",
+        "city": "",
+        "state": "",
+        "country": "",
+        "pincode": ""
+    }
+},{
+    "userName": "Souvik",
+    "emailId": "",
+    "phoneNumber": "",
+    "altPhoneNumber": "",
+    "occupation": "",
+    "fatherName": "",
+    "addressDetails": {
+        "address": "",
+        "district": "",
+        "city": "",
+        "state": "",
+        "country": "",
+        "pincode": ""
+    }
+},{
+    "userName": "Vasu",
+    "emailId": "",
+    "phoneNumber": "",
+    "altPhoneNumber": "",
+    "occupation": "",
+    "fatherName": "",
+    "addressDetails": {
+        "address": "",
+        "district": "",
+        "city": "",
+        "state": "",
+        "country": "",
+        "pincode": ""
+    }
+}]

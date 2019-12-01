@@ -1,0 +1,18 @@
+.userListDiv{
+    border: 15px 50px solid grey;
+    background-color: rgb(226, 222, 222);
+    /* box-shadow: 5px 10px 18px #bdb8b8; */
+    box-shadow: 1px 1px 5px #bdb8b8;
+    cursor: pointer;
+    padding:1%;
+    margin: 15px;
+}
+
+.example-card {
+    max-width: 400px;
+  }
+  
+  /* .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  } */

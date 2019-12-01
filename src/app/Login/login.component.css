@@ -1,0 +1,13 @@
+::ng-deep .container{
+    width:74%;
+   
+}
+
+::ng-deep .tab-content{
+    margin-left:-227px;
+}
+
+ ::ng-deep .nav
+{
+    width: 64%;
+} 
